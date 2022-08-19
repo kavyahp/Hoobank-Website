@@ -22,6 +22,7 @@ const Navbar = () => {
               {nav.title}
             </a>
           </li>
+          
         ))}
       </ul>
 

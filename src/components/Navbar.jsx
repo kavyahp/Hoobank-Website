@@ -3,6 +3,8 @@ import {useState} from 'react'
 import {close,logo,menu} from '../assets';
 import {navLinks} from '../constants';
 
+import {Link} from 'react-scroll';
+
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
 
@@ -14,11 +16,10 @@ const Navbar = () => {
         {navLinks.map((nav, index) => (
           <li
             key={nav.id}
-            className={`{ hover:text-secondary transition ease-in-out duration-500 font-poppins font-normal cursor-pointer text-[16px]  text-dimWhite ${
-              index === navLinks.length - 1 ? "mr-0" : "mr-10"   
-            }`}
+            className={`{ hover:text-secondary transition ease-in-out duration-400 font-poppins font-normal cursor-pointer text-[16px] ${index === navLinks.length - 5 ? "text-white" : "text-dimWhite"} ${index === navLinks.length - 1 ? "mr-0" : "mr-10"   
+            }`} 
           >
-            <a href={`#${nav.id}`}>
+            <a href={`#${nav.id}`} >
               {nav.title}
             </a>
           </li>

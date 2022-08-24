@@ -117,7 +117,8 @@
 }
 
 .feedback-card {
-  background: transparent;
+  background: none;
+  transition: all ease-in-out;
 }
 
 .feedback-card:hover {

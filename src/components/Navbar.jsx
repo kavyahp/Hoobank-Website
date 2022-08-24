@@ -2,29 +2,27 @@ import {useState} from 'react'
 
 import {close,logo,menu} from '../assets';
 import {navLinks} from '../constants';
-
-import {Link} from 'react-scroll';
+import Button from "./Button";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
 
   return (
     <nav className="w-full flex py-6 justify-between items-center navbar">
-      <img src={logo} alt="hoobank" className="w-[124px] h=[32px]" />
+      <img src={logo} alt="hoobank" className="w-[124px] h=[32px]" /  >
 
       <ul className="list-none sm:flex hidden justify-end items-center flex-1">
         {navLinks.map((nav, index) => (
           <li
             key={nav.id}
-            className={`{ hover:text-secondary transition ease-in-out duration-400 font-poppins font-normal cursor-pointer text-[16px] ${index === navLinks.length - 5 ? "text-white" : "text-dimWhite"} ${index === navLinks.length - 1 ? "mr-0" : "mr-10"   
-            }`} 
+            className={`{ hover:text-secondary transition ease-in-out duration-400 font-poppins font-normal cursor-pointer text-[16px] ${index === navLinks.length - 4 ? "text-white" : "text-dimWhite"} ${index === navLinks.length - 1 ? "mr-0" : "mr-10" }`} 
           >
             <a href={`#${nav.id}`} >
               {nav.title}
             </a>
           </li>
-          
         ))}
+        <Button styles={"ml-10 py-3 px-4 text-[16px]"} />
       </ul>
 
       <div className="sm:hidden flex flex-1 justify-end items-center">
